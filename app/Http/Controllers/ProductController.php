@@ -34,6 +34,7 @@ class ProductController extends Controller
      *     path="/api/products",
      *     tags={"Products"},
      *     summary="Create a new product",
+     *     security={{"bearerAuth":{}}},
      *     @OA\RequestBody(
      *         @OA\MediaType(
      *             mediaType="application/json",
@@ -43,6 +44,7 @@ class ProductController extends Controller
      *                 @OA\Property(property="name", type="string"),
      *                 @OA\Property(property="description", type="string"),
      *                 @OA\Property(property="price", type="number", format="float"),
+     *                 @OA\Property(property="category_id", type="number", format="integer"),
      *             )
      *         )
      *     ),
@@ -58,6 +60,7 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
+            'category_id' => 'required'
         ]);
         return Product::create($request->all());
     }
@@ -94,6 +97,7 @@ class ProductController extends Controller
      *     path="/api/products/{id}",
      *     tags={"Products"},
      *     summary="Update an existing product",
+    *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -131,6 +135,7 @@ class ProductController extends Controller
      *     path="/api/products/{id}",
      *     tags={"Products"},
      *     summary="Delete a product",
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
