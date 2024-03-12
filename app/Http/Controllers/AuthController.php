@@ -6,6 +6,12 @@ use Hash;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+/**
+ * @OA\Tag(
+ *     name="Auth",
+ *     description="Authentication",
+ * )
+ */
 class AuthController extends Controller
 {
     /**
