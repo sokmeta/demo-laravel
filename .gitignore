@@ -17,6 +17,9 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-
-# MacOS
+**/._.DS_Store
+**/.DS_Store
+._.DS_Store
+.DS_Store
 *.DS_Store
+*/.DS_Store
